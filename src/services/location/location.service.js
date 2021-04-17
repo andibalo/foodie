@@ -1,4 +1,4 @@
-import camelie from "camelize";
+import camelize from "camelize";
 
 import { locations } from "./location.mock";
 
