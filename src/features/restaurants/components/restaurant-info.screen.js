@@ -5,6 +5,7 @@ import star from "../../../../assets/star";
 import open from "../../../../assets/open";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
+import { Favourite } from "../../../components/favourite/favourite.component";
 import {
   RestaurantCard,
   Title,
@@ -34,6 +35,7 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
 
   return (
     <RestaurantCard elevation={5}>
+      <Favourite restaurant={restaurant} />
       <Card.Cover key={name} source={{ uri: photos[0] }} />
       <Info>
         <Title>{name}</Title>
@@ -48,7 +50,6 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
               />
             ))}
           </Rating>
-
           <SectionEnd>
             {isClosedTemporarily && (
               <Text variant="error">CLOSED TEMPORARILY</Text>
