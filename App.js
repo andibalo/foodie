@@ -22,8 +22,10 @@ const firebaseConfig = {
   messagingSenderId: "442522998550",
   appId: "1:442522998550:web:03e4a061058a58081c2237",
 };
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
